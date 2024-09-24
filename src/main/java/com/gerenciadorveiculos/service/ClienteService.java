@@ -4,7 +4,8 @@ import com.gerenciadorveiculos.exceptions.ClienteCadastradoException;
 import com.gerenciadorveiculos.exceptions.ClienteNaoCadastradoException;
 import com.gerenciadorveiculos.exceptions.VendedorNaoCadastradoException;
 import com.gerenciadorveiculos.model.Cliente;
-import com.gerenciadorveiculos.repository.ClienteRepository;
+import com.gerenciadorveiculos.repository.postgres.ClienteRepository;
+
 
 public class ClienteService {
     ClienteRepository clienteRepository = new ClienteRepository();
