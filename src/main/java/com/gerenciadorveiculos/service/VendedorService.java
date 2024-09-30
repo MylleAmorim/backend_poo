@@ -3,7 +3,7 @@ package com.gerenciadorveiculos.service;
 import com.gerenciadorveiculos.exceptions.VendedorCadastradoException;
 import com.gerenciadorveiculos.exceptions.VendedorNaoCadastradoException;
 import com.gerenciadorveiculos.model.Vendedor;
-import com.gerenciadorveiculos.repository.VendedorRepository;
+import com.gerenciadorveiculos.repository.postgres.VendedorRepository;
 
 public class VendedorService {
     VendedorRepository vendedorRepository = new VendedorRepository();

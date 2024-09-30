@@ -2,7 +2,7 @@ package com.gerenciadorveiculos.service;
 
 import com.gerenciadorveiculos.exceptions.VendaNaoCadastradaException;
 import com.gerenciadorveiculos.model.Venda;
-import com.gerenciadorveiculos.repository.VendaRepository;
+import com.gerenciadorveiculos.repository.postgres.VendaRepository;
 
 import java.util.Collection;
 

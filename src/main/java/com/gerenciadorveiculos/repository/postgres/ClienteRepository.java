@@ -5,6 +5,7 @@ import com.gerenciadorveiculos.model.Cliente;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
 
 public class ClienteRepository {
 
@@ -32,6 +33,26 @@ public class ClienteRepository {
                 String nome = resultSet.getString("nome");
                 String telefone = resultSet.getString("telefone");
                 cliente = new Cliente(nome, cpf, telefone);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return cliente;
+    }
+
+    public Collection<Cliente> consultarClientePorNome(String nomePesquisado) {
+        Collection<Cliente> cliente = null;
+        String sql = "select * from cliente where nome like '%?%'";
+
+        try (PreparedStatement statement = Repository.getInstance().prepareStatement(sql)) {
+            statement.setString(1, nomePesquisado);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String nome = resultSet.getString("nome");
+                String telefone = resultSet.getString("telefone");
+                String cpf = resultSet.getString("cpf");
+                cliente.add(new Cliente(nome, cpf, telefone));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

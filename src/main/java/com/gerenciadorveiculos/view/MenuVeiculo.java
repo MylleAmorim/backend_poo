@@ -68,21 +68,20 @@ public class MenuVeiculo {
     }
 
     private void cadastrarVeiculo() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Digite a placa do veiculo:");
-        String placa = sc.next();
+        String placa = new Scanner(System.in).next();
         System.out.println("Digite a marca do veiculo:");
-        String marca = sc.next();
+        String marca = new Scanner(System.in).next();
         System.out.println("Digite o modelo do veiculo:");
-        String modelo = sc.next();
+        String modelo = new Scanner(System.in).next();
         System.out.println("Digite o ano do veiculo:");
-        int ano = sc.nextInt();
+        int ano = new Scanner(System.in).nextInt();
         System.out.println("Digite a categoria do veiculo:");
-        String categoria = sc.next();
+        String categoria = new Scanner(System.in).next();
         System.out.println("Digite a descrição do veiculo:");
-        String descricao = sc.next();
+        String descricao = new Scanner(System.in).next();
         System.out.println("Digite o preço do veiculo:");
-        Double preco = sc.nextDouble();
+        Double preco = new Scanner(System.in).nextDouble();
 
         Veiculo veiculo = new Veiculo(placa, marca, modelo, ano, categoria,descricao,preco);
         try {
